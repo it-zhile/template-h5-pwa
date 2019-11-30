@@ -1,0 +1,128 @@
+// 主色调 --------------------------------------------------------------------------------------------------------------
+$app-yellow: #f7bd01;
+
+// 文字颜色 --------------------------------------------------------------------------------------------------------------
+$text-white: #fff;
+$text-white8: rgba($color: #fff, $alpha: 0.8);
+$text-white6: rgba($color: #fff, $alpha: 0.6);
+$text-white3: rgba($color: #fff, $alpha: 0.3);
+
+$text-black: #262626;
+$text-black8: rgba($color: #262626, $alpha: 0.8);
+$text-black6: rgba($color: #262626, $alpha: 0.6);
+$text-black3: rgba($color: #262626, $alpha: 0.3);
+
+// 背景色
+$bgc-white: #fff;
+$bgc-white8: rgba($color: #fff, $alpha: 0.8);
+$bgc-white6: rgba($color: #fff, $alpha: 0.6);
+$bgc-white3: rgba($color: #fff, $alpha: 0.3);
+
+$bgc-black: #262626;
+$bgc-black8: rgba($color: #262626, $alpha: 0.8);
+$bgc-black6: #343434;
+$bgc-black3: #3E3E3E;
+
+// 边框色，线条色 -------------------------------------------------------------------------------------------------
+$line: #616263;
+
+// 线性渐变色 -------------------------------------------------------------------------------------------------
+@mixin bgc-color-line($color1: #FBB132, $color2: #FFDA03, $dir: to right) {
+    background: linear-gradient($dir, $color1, $color2);
+}
+
+// 边框 -------------------------------------------------------------------------------------------------
+@mixin border($size: 1PX, $color: $line) {
+    border: $size solid $color;
+}
+
+@mixin bt($size: 1PX, $color: $line) {
+    border-top: $size solid $color;
+}
+
+@mixin br($size: 1PX, $color: $line) {
+    border-right: $size solid $color;
+}
+
+@mixin bb($size: 1PX, $color: $line) {
+    border-bottom: $size solid $color;
+}
+
+@mixin bl($size: 1PX, $color: $line) {
+    border-left: $size solid $color;
+}
+
+
+// 超出范围字体使用···隐藏
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin text-ellipsis($line:1) {
+    text-overflow     : ellipsis; // 用省略号“…”隐藏超出范围的文本
+    overflow          : hidden; // 超出范围的内容隐藏
+    display           : -webkit-box; // 将对象作为弹性伸缩盒子模型显示 
+    -webkit-line-clamp: $line; // 第几行出现省略号
+    -webkit-box-orient: vertical; // 设置或检索伸缩盒对象的子元素的排列方式 
+}
+
+
+
+// -------------------------------------------------------------------------------------------------
+.button {
+    height: 40px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #FBB132, #FFDA03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: $text-black;
+    -webkit-touch-callout: none;    /* iOS Safari */
+    -webkit-user-select: none;      /* Chrome/Safari/Opera */
+    -khtml-user-select: none;       /* Konqueror */
+    -moz-user-select: none;         /* Firefox */
+    -ms-user-select: none;          /* Internet Explorer/Edge */
+    user-select: none;              /* Non-prefixed version, currently*/
+    &:active {
+        opacity: 0.9;
+    }
+}
+
+.button-line {
+    height: 40px;
+    color: $text-white6;
+    border: 1px solid $text-white3;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    -webkit-touch-callout: none;    /* iOS Safari */
+    -webkit-user-select: none;      /* Chrome/Safari/Opera */
+    -khtml-user-select: none;       /* Konqueror */
+    -moz-user-select: none;         /* Firefox */
+    -ms-user-select: none;          /* Internet Explorer/Edge */
+    user-select: none;              /* Non-prefixed version, currently*/
+    &:active {
+        opacity: 0.9;
+    }
+}
+
+.button-text {
+    color: $app-yellow;
+    &:active {
+        opacity: 0.9;
+    }
+}
+
+.button-active {
+    &:active {
+        opacity: 0.9;
+    }
+}
+
+.yellow {
+    color: $app-yellow;
+}
