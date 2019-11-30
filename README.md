@@ -1,4 +1,4 @@
-# cliyeu_h5
+# template-h5-pwa
 
 ## Project setup
 ```
